@@ -279,7 +279,7 @@ with tab2:
                 
                 st.markdown(
                         '<div style="background-color: white; padding: 10px;">'
-                        f'<h> De este modo se observa que {texto_max} <span style="color: blue;">{texto_max2}</span>, resalta la presencia de eventos sísmicos a un nivel'
+                        f'<h> De este modo se observa que {texto_max} <span style="color: blue;">{texto_max2}</span>, resalta la presencia de eventos sísmicos a un nivel de profundidad'
                         f' <span style="color: blue;">{nivel_mostrar}</span>, calculados desde el hipocentro hasta la capa superficial de la tierra, en comparación con las demás.'
                         f' Y esta, contabiliza un total de <span style="color: blue;">{numero_mostrar}</span> puntos de evento. De manera tal, se puede inferir'
                         f' que {informac}</h>'
