@@ -223,7 +223,7 @@ with tab2:
                 # Agregar la leyenda al mapa
                 mapa.get_root().html.add_child(legend)
                 st.markdown(
-                        '<div style="background-color: white; padding: 10px;">'
+                        '<div style="background-color: orange; padding: 10px;">'
                         ' Ya seleccionada la fecha, se observarán dos gráficas, la primera es la de un mapa con ubicaciones marcadas y la segunda de una gráfica de tablas.'
                         ' La información de la frecuencia de eventos lo podemos diferenciar gracias a la sengunda gráfica, cada una de las barras indica el nivel de profundidad.'
                         ' Cada nivel está representada por rangos que posee un color característico que indica lo siguiente: el de color rojo hace referencia a sismos superficiales (0-70 km de profundidad);'
