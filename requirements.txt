@@ -1,8 +1,9 @@
-folium
 streamlit
-plotly
+folium
 streamlit_folium
-pandas
+plotly
 numpy
+pandas
 matplotlib
+Pillow
 openpyxl
