@@ -59,7 +59,7 @@ with tab2:
 
     # Texto con fondo blanco usando markdown
     st.markdown(
-        '<div style="background-color: black; padding: 10px;">'
+        '<div style="background-color: lilac; padding: 10px;">'
         '<h>El Perú, ubicado en el Cinturón de Fuego del Pacífico, experimenta una alta actividad sísmica y volcánica, '
         'el cual, es de suma importancia su correspondiente investigación.  ' 
         'En esta sección, se presenta el análisis de la concurrencia de eventos sísmicos mediante un mapa de calor, '
