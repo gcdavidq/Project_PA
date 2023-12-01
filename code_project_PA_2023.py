@@ -304,4 +304,4 @@ with tab2:
 with tab3:
    st.header("An owl")
    st.image("https://static.streamlit.io/examples/owl.jpg", width=500)
-    Codigo_2()
+   Codigo_2()
