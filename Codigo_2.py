@@ -1,10 +1,11 @@
 
-@st.cache_data
+@st.cache
 def load_department_boundaries():
     peru_departments = gpd.read_file('departamentos_perú.geojson')
     return peru_departments
 
-@st.cache_data
+@st.cache
+
 def load_data(file):
     data = pd.read_csv(file)
     # Rename 'FECHA_UTC' to 'Año'
