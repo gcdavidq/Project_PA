@@ -1,11 +1,17 @@
+import streamlit as st
+import pandas as pd
+import geopandas as gpd
+import folium
+from shapely.geometry import Point
+from streamlit_folium import folium_static
+import plotly.express as px
+@st.cache_data
 
-@st.cache
 def load_department_boundaries():
     peru_departments = gpd.read_file('departamentos_perú.geojson')
     return peru_departments
-
-@st.cache
-
+    
+@st.cache_data
 def load_data(file):
     data = pd.read_csv(file)
     # Rename 'FECHA_UTC' to 'Año'
@@ -82,6 +88,3 @@ def main():
     data = load_data(file_path)
     merged_data = assign_departments(data, department_boundaries)
     show_departments_count(merged_data)
-
-if __name__ == "__main__":
-    main()
