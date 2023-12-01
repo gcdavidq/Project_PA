@@ -303,4 +303,4 @@ with tab2:
 # Análisis a nivel departamental
 with tab3:
    st.header("An owl")
-   st.image("https://static.streamlit.io/examples/owl.jpg", width=200)
+   st.image("https://static.streamlit.io/examples/owl.jpg", width=500)
