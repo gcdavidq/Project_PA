@@ -1,4 +1,3 @@
-from  Codigo_2 import *
 import streamlit as st
 import folium as fl
 from streamlit_folium import folium_static
@@ -10,6 +9,7 @@ import matplotlib.pyplot as plt
 from PIL import Image
 import geopandas as gpd
 from shapely.geometry import Point
+from Codigo_2 import Codigo_2
 
 page_bg_img = f"""
     <style>
