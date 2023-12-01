@@ -1,11 +1,11 @@
 streamlit
 folium
 streamlit_folium
-plotly
+plotly==5.0.0
 numpy
 pandas
 matplotlib
 Pillow
 openpyxl
-geopandas
-shapely
+geopandas==0.10.0
+shapely==1.7.1
