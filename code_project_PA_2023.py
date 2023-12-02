@@ -7,7 +7,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 from PIL import Image
-import geopandas as gpd
+
 from shapely.geometry import Point
 from Codigo_2 import main
 
