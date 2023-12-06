@@ -16,7 +16,7 @@ page_bg_video = """
     </style>
 """
 
-st.markdown(page_bg_img, unsafe_allow_html=True)
+st.markdown(page_bg_video, unsafe_allow_html=True)
 
 image1 = Image.open('image.jpg')
 
