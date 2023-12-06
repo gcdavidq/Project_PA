@@ -34,7 +34,8 @@ with tab1:
     color = '#da70d6'  # Puedes usar nombres de colores o códigos hexadecimales
     
     # Usar Markdown y HTML para aplicar estilos al subencabezado
-    st.markdown(f'<h3 style="color:{color}; font-style:{font_style};">ANÁLISIS SÍSMICO REGISTRADOS EN EL PERÚ (1960_2022)</h3>', unsafe_allow_html=True)
+    st.markdown(f'<h3 style="color:{color}; font-family: Cooper Black, sans-serif;">ANÁLISIS SÍSMICO REGISTRADOS EN EL PERÚ (1960_2022)</h3>', unsafe_allow_html=True)
+
     st.image(image1)
 
 # Análisis a nivel nacional
