@@ -13,14 +13,13 @@ page_bg_img = """
     <style>
     [data-testid="stAppViewContainer"] > .main {
         background-image: url("https://raw.githubusercontent.com/gcdavidq/Project_PA/main/im1.jpg");
-        background-size: 100% auto;
+        background-size: cover;
         background-position: center;
-        background-attachment: local;
+        background-attachment: fixed;
     }
     </style>
 """
 st.markdown(page_bg_img, unsafe_allow_html=True)
-
 image1 = Image.open('Imagen_Mapa_Peru.jpeg')
 
 # Añadimos un panel de control
