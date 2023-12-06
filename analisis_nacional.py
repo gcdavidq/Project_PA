@@ -28,8 +28,8 @@ def visualizacion_a_nivel_nacional(archivo):
     for i in range(min_anio, max_anio + 1):
         anios_comprendidos.append(i)
 
-    st.header("Mapa de calor de eventos sísmicos por concurrencia en zonas geográficas\
-            y distribución por profundidad")
+    st.markdown("<h1 style='text-align: left; color: rgba(0, 0, 180, 5); font-family: monospace;'>Mapa de calor de eventos sísmicos por concurrencia en zonas geográficas y distribución por profundidad</h1>", unsafe_allow_html=True)
+
     
 
     # Texto con fondo blanco usando markdown
