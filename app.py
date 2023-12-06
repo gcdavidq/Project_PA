@@ -2,7 +2,11 @@ import streamlit as st
 from PIL import Image
 from analisis_nacional import visualizacion_a_nivel_nacional
 from analisis_departamental import load_department_boundaries, load_data, assign_departments, show_departments_count
-
+st.set_page_config(
+    page_title="Sismos en el Perú",
+    page_icon="volcano",
+    initial_sidebar_state="expanded",
+)
 page_bg_img = f"""
     <style>
     [data-testid="stAppViewContainer"] > .main {{
