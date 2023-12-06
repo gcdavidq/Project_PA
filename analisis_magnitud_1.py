@@ -170,10 +170,4 @@ def mostrar_dashboard(archivo_excel):
         key="download_line_chart"
     )
 
-    map_download_button = st.download_button(
-        label="Descargar Mapa",
-        data=mapa_filtrado_opcion._repr_html_(),
-        file_name="mapa.html",
-        key="download_map"
-    )
 
