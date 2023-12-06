@@ -7,29 +7,10 @@ st.set_page_config(
     page_icon="volcano",
     initial_sidebar_state="expanded",
 )
-page_bg_video = """
-    <style>
-    body {
-        margin: 0;
-        overflow: hidden;
-    }
+video_path = "p1.mp4"
 
-    video {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        z-index: -1;
-    }
-    </style>
-
-    <video autoplay loop muted playsinline>
-        <source src="p1.mp4" type="video/mp4">
-        Tu navegador no soporta el elemento de video.
-    </video>
-"""
+# Mostrar el video usando st.video
+st.video(open(video_path, 'rb').read())
 
 st.markdown(page_bg_video, unsafe_allow_html=True)
 
