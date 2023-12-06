@@ -77,7 +77,7 @@ def show_departments_count(data):
     st.subheader('Mapa Sísmico del Perú periodo 1960-2022 (IGP) ')
 
     data = data.rename(columns={'NOMBDEP': 'DEPARTAMENTOS'})
-    options = ['DEPARTAMENTOS', 'GRÁFICOS DE LINEA']
+    options = ['DEPARTAMENTOS']
 
     selected_column = st.selectbox('Selecciona una columna:', options)
 
