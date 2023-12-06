@@ -10,7 +10,7 @@ st.set_page_config(
 page_bg_img = f"""
     <style>
     [data-testid="stAppViewContainer"] > .main {{
-        background-image: url("https://raw.githubusercontent.com/gcdavidq/Project_PA/main/im1.jpg");
+        background-image: url("https://raw.githubusercontent.com/gcdavidq/Project_PA/main/8.png");
         background-size: cover;
         background-position: center;
         background-attachment: local;
