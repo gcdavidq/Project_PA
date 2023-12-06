@@ -146,7 +146,7 @@ def show_departments_count(data):
         ##Creamos un mapa vació con enfoque a Perú.
         peru_center_coords = [-9.1900, -75.0152]
         peru_map = folium.Map(location=peru_center_coords, zoom_start=4.8)
-        st.components.v1.html(peru_map._repr_html_(), scrolling=True)
+        st.components.v1.html(peru_map._repr_html_(), width=800, height=600, scrolling=True)
     else:
         # Hay departamentos seleccionados
         filtered_data = data[data[selected_column].isin(selected_values)]
