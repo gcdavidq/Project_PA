@@ -19,7 +19,31 @@ page_bg_img = f"""
 """
 st.markdown(page_bg_img, unsafe_allow_html=True)
 
-image1 = Image.open('image1.png')
+video_file = "p1.pm4"
+
+# Mostrar video si se ha cargado uno
+if video_file is not None:
+    video_url = f"data:video/{video_file.type};base64,{video_file.read().encode('base64').decode()}"
+    st.markdown(
+        f"""
+        <style>
+            video {{
+                position: fixed;
+                right: 0;
+                bottom: 0;
+                min-width: 100%;
+                min-height: 100%;
+                width: auto;
+                height: auto;
+                z-index: -1;
+            }}
+        </style>
+        <video autoplay loop muted playsinline>
+            <source src="{video_url}" type="video/{video_file.type}">
+        </video>
+        """,
+        unsafe_allow_html=True
+    )
 
 # Añadimos un panel de control
 tab1, tab2, tab3 = st.tabs([  "Inicio", "Análisis a nivel nacional", "Anális a nivel departamental"])
