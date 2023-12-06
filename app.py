@@ -13,11 +13,8 @@ if video_file is not None:
     # Crea un identificador único para el elemento video
     video_id = st.markdown(f'<div id="stVideoPlayer"></div>', unsafe_allow_html=True)
 
-    # Obtén la ruta del video cargado
-    video_path = video_file.name
-
-    # Muestra el video
-    st.video(video_file)
+    # Obtén la ruta única del video cargado generada por st.video
+    video_path = st.empty().video(video_file, format="video/mp4")._repr_html_().split('src="')[1].split('"')[0]
 
     # Agrega el estilo CSS necesario para el fondo de video
     st.markdown(
@@ -39,7 +36,7 @@ if video_file is not None:
         </style>
         <script>
         const videoPlayer = document.getElementById('stVideoPlayer');
-        videoPlayer.innerHTML = '<video autoplay loop muted playsinline><source src="/files/{video_path}" type="video/mp4">Tu navegador no soporta el elemento de video.</video>';
+        videoPlayer.innerHTML = '<video autoplay loop muted playsinline><source src="{video_path}" type="video/mp4">Tu navegador no soporta el elemento de video.</video>';
         </script>
         """,
         unsafe_allow_html=True
