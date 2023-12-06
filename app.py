@@ -19,11 +19,11 @@ page_bg_img = f"""
 """
 st.markdown(page_bg_img, unsafe_allow_html=True)
 
-video_file = "p1.pm4"
+video_file_path = "p1.mp4"
 
 # Mostrar video si se ha cargado uno
-if video_file is not None:
-    video_url = f"data:video/{video_file.type};base64,{video_file.read().encode('base64').decode()}"
+if video_file_path is not None:
+    video_url = f"data:video/mp4;base64,{open(video_file_path, 'rb').read().encode('base64').decode()}"
     st.markdown(
         f"""
         <style>
@@ -39,7 +39,7 @@ if video_file is not None:
             }}
         </style>
         <video autoplay loop muted playsinline>
-            <source src="{video_url}" type="video/{video_file.type}">
+            <source src="{video_url}" type="video/mp4">
         </video>
         """,
         unsafe_allow_html=True
