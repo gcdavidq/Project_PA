@@ -34,10 +34,8 @@ def visualizacion_a_nivel_nacional(archivo):
 
     # Texto con fondo blanco usando markdown
     st.markdown(
-        '<div style="background-color: #ffffff80; padding: 10px;border-radius: 10px;">'
-        '<h>El Perú, ubicado en el Cinturón de Fuego del Pacífico, experimenta una alta actividad sísmica y volcánica, '
-        'el cual, es de suma importancia su correspondiente investigación.  ' 
-        'En esta sección, se presenta el análisis de la concurrencia de eventos sísmicos mediante un mapa de calor, '
+        '<div style="background-color: white; padding: 10px;border-radius: 10px;">'
+        '<h>En esta sección, se presenta el análisis de la concurrencia de eventos sísmicos mediante un mapa de calor, '
         'junto con la distribución de estos por profundidad. Esta última, ya sea superficial, intermedia'
         ' o profunda, influyee en la forma en que el sismo afecta a la superficie, por ende, el potencial destructivo.'
         ' A continuación, se ofrece la opción de búqueda de eventos por fechas, ya sea de manera puntual o en rangos,'
