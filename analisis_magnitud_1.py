@@ -150,7 +150,7 @@ def mostrar_dashboard(archivo_excel):
     if mapa_filtrado_opcion is not None:
         folium_static(mapa_filtrado_opcion)
     else:
-        st.warning("No hay datos disponibles para los filtros seleccionados. No se pudo mostrar el mapa)
+        st.warning("No hay datos disponibles para los filtros seleccionados. No se pudo mostrar el mapa")
     
 
     # Agregar botón de descarga para el gráfico de barras
