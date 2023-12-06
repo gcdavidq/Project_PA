@@ -56,7 +56,7 @@ def visualizacion_a_nivel_nacional(archivo):
         # Mostraremos la información correspondiente a la opción seleccionada
         st.markdown(f"*Filtro de información de: {opcion}*")
 
-    if opcion == None:
+if opcion == None:
         # Inicializamos la previsualización con el mapa centrado 
         mapa = fl.Map(location=[-9.189967, -75.015152], zoom_start=5)
         folium_static(mapa) 
@@ -65,7 +65,7 @@ def visualizacion_a_nivel_nacional(archivo):
         with col2:
             op_fecha1 = st.selectbox(
                 "Por",
-                ("años puntuales", "rango de años"),
+                ("años puntuales","ninguno"),
                 index=None, placeholder="Seleccione . . .")
             
             if op_fecha1 == "años puntuales":
@@ -90,43 +90,47 @@ def visualizacion_a_nivel_nacional(archivo):
                     heat_data = [[row['LATITUD'], row['LONGITUD']] for index, row in df_filtrado_opcion.iterrows()]
                     HeatMap(heat_data, name='Mapa de Calor', radius=50, max_zoom=15).add_to(mapa)
                     
+                    # Construir la leyenda en HTML
+                    legend_html = """
+                        <div style="position: fixed; 
+                                    bottom: 35px; left: 5px; width: 220px; height: 130px; 
+                                    border:3px solid grey; z-index:9999; font-size:14px;
+                                    background-color:white;text-align: center;
+                                    border-radius: 6px;">
+                            &nbsp; <span style="text-decoration: underline;", class="font-monospace">Leyenda</span> <br>
+                            &nbsp; <span class="font-monospace">Baja concurrencia</span> &nbsp; 
+                            <div style="width: 20px; height: 20px; background-color: green; display: inline-block;"></div>
+                            &nbsp; <span class="font-monospace">Concurrencia moderada</span> &nbsp; 
+                            <div style="width: 20px; height: 20px; background-color: orange; display: inline-block;"></div>
+                            &nbsp; <span class="font-monospace">Alta concurrencia</span> &nbsp; 
+                            <div style="width: 20px; height: 20px; background-color: red; display: inline-block;"></div>
+                        </div>
+                    """
+
+
+                    # Convertir la leyenda HTML a un objeto de Folium
+                    legend = fl.Element(legend_html)
+
+                    # Agregar la leyenda al mapa
+                    mapa.get_root().html.add_child(legend)
+                
                     with col3:
-                        folium_static(mapa)
+                        st.components.v1.html(mapa._repr_html_(), width=710, height=470)
+
+                        st.markdown(
+                            '<div style="color: white;">'
+                            '<h>Después de visualizar el mapa de calor, p'
+                            'junto con la distribución de estos por profundidad. Esta última, ya sea superficial, intermedia'
+                            ' o profunda, influye en la forma en que el sismo afecta a la superficie, por ende, el potencial destructivo.'
+                            ' A continuación, se ofrece la opción de búqueda de eventos por fechas, ya sea de manera puntual o en rangos,'
+                            ' acompañada de una gráfica estadística para facilitar su comprensión.</h>'
+                            '</div>',
+                            unsafe_allow_html=True
+                        )
                 else: 
                     with col3: 
                         mapa = fl.Map(location=[-9.189967, -75.015152], zoom_start=5)
                         folium_static(mapa)
-            
-            elif op_fecha1 == "rango de años":
-                min_anio_option = st.selectbox('Selecciona el año mínimo', options=list(range(min_anio, max_anio + 1)), 
-                                            index=None, placeholder="elija")
-                if min_anio_option is not None:
-                    if min_anio_option >= min_anio: 
-                        max_anio_option = st.selectbox('Selecciona el año máximo', 
-                                                    options=list(range(min_anio_option, max_anio + 1)))
-                        max_anio = max_anio_option  
-                        min_anio = min_anio_option 
-
-                        df_filtrado_opcion = df[
-                            (df['Anio'].astype(int) >= min_anio) & (df['Anio'].astype(int) <= max_anio)
-                        ]
-                    mapa = fl.Map(location=[df_filtrado_opcion['LATITUD'].mean(), df_filtrado_opcion['LONGITUD'].mean()], 
-                                zoom_start=5.5, max_zoom=10, control_scale=True, width="100%", height="100%")
-
-                    for index, row in df_filtrado_opcion.iterrows():
-                        fl.Marker([row['LATITUD'], row['LONGITUD']],
-                                    popup=f"Profundidad: {row['PROFUNDIDAD']} km\nMagnitud: {row['MAGNITUD']}").add_to(mapa)
-
-                    heat_data = [[row['LATITUD'], row['LONGITUD']] for index, row in df_filtrado_opcion.iterrows()]
-                    HeatMap(heat_data, name='Mapa de Calor', radius=50, max_zoom=15).add_to(mapa)
-                    
-                    with col3:
-                        folium_static(mapa)
-                        
-                else: 
-                    with col3: 
-                        mapa = fl.Map(location=[-9.189967, -75.015152], zoom_start=5)
-                        folium_static(mapa) 
             else: 
                 with col3: 
                     mapa = fl.Map(location=[-9.189967, -75.015152], zoom_start=5)
@@ -136,8 +140,9 @@ def visualizacion_a_nivel_nacional(archivo):
         with col2:
             op_fecha2 = st.selectbox(
                 "Por",
-                ("rango de años", ""),
+                ("rango de años", "ninguno"),
                 index=None, placeholder="Seleccione . . .")
+            
 
         if op_fecha2 == "rango de años":
             with col2:
@@ -257,13 +262,12 @@ def visualizacion_a_nivel_nacional(archivo):
                     texto_max =  " entre los años "
                     texto_max2 = f"{min_anio} - {max_anio}"
                 fig.update_layout(title={'text': f'Frecuencia de Sismos en Rangos de Profundidad ({min_anio}{tex})','x': 0.2,},xaxis_title='Rango de Profundidad (Km)',yaxis_title='Frecuencia',height=500,width=712)
-                # Agrega bordes a las barras
                 fig.update_traces(marker=dict(line=dict(color='black', width=1)), selector=dict(type='bar'))
                 st.plotly_chart(fig)
                 st.subheader("Después de visualizar el mapa y el gráfico de barras, se detalla lo siguiente: ")  
                 
                 st.markdown(
-                        '<div style="background-color: white; padding: 10px;">'
+                        '<div style="background-color: white; padding: 10px;border-radius: 10px;">'
                         f'<h> De este modo se observa que {texto_max} <span style="color: blue;">{texto_max2}</span>, resalta la presencia de eventos sísmicos a un nivel de profundidad'
                         f' <span style="color: blue;">{nivel_mostrar}</span>, calculados desde el hipocentro hasta la capa superficial de la tierra, en comparación con las demás.'
                         f' Y esta, contabiliza un total de <span style="color: blue;">{numero_mostrar}</span> puntos de evento. De manera tal, se puede inferir'
