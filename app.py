@@ -23,7 +23,7 @@ st.markdown(page_bg_img, unsafe_allow_html=True)
 image1 = Image.open('Img_3.jpeg')
 
 # Añadimos un panel de control
-tab1, tab2, tab3 = st.tabs([  "Inicio", "Análisis a nivel nacional", "Anális a nivel departamental"])
+tab1, tab2, tab3 = st.tabs(["_Streamlit_ is :blue[_Inicio_] :sunglasses:", "Análisis a nivel nacional", "Anális a nivel departamental"])
 
 with tab1:
     st.image(image1)
