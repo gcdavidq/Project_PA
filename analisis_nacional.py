@@ -51,7 +51,7 @@ def visualizacion_a_nivel_nacional(archivo):
         st.write("Seleccione la foma de búsqueda:")
         opcion = st.radio(
             "Mostrar los eventos por",
-            ["**Mapa de calor**","**Distribución por porfundidad**"],
+            ['<div style="color: blue;">' "**Mapa de calor**","**Distribución por porfundidad**"],
             captions = ["*con opción de búsqueda por fechas.*", "*con opción de búsqueda por fechas.*"],
             index=None)
       
