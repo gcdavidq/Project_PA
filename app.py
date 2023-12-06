@@ -19,13 +19,7 @@ page_bg_img = f"""
 """
 st.markdown(page_bg_img, unsafe_allow_html=True)
 
-video_file_path = "p1.mp4"
-
-# Mostrar video si se ha cargado uno
-if video_file_path is not None:
-    with open(video_file_path, 'rb') as video_file:
-        video_contents = video_file.read()
-        st.video(video_contents)
+image1 = Image.open('image1.png')
 
 # Añadimos un panel de control
 tab1, tab2, tab3 = st.tabs([  "Inicio", "Análisis a nivel nacional", "Anális a nivel departamental"])
