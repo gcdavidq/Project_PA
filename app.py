@@ -24,13 +24,13 @@ st.markdown(page_bg_img, unsafe_allow_html=True)
 image1 = Image.open('Imagen_Mapa_Peru.jpeg')
 
 # Añadimos un panel de control
-tab1, tab2, tab3 = st.tabs([":blue[**INICIO**] :derelict_house_building:", ":blue[_ANÁLISIS A NIVEL NACIONAL_]", ":blue[_ANÁLISIS A NIVEL DEPARTAMENTAL_]"])
+tab1, tab2, tab3 = st.tabs([":blue[**INICIO**]", ":blue[_**ANÁLISIS A NIVEL NACIONAL**_]", ":blue[_**ANÁLISIS A NIVEL DEPARTAMENTAL**_]"])
 
 with tab1:
     font_style = 'font-weight: bolder;'
 
       # Puedes usar 'italic', 'oblique', 'normal', 'bold', etc.
-    color = 'Red'  # Puedes usar nombres de colores o códigos hexadecimales
+    color = '#da70d6'  # Puedes usar nombres de colores o códigos hexadecimales
     
     # Usar Markdown y HTML para aplicar estilos al subencabezado
     st.markdown(f'<h3 style="color:{color}; font-style:{font_style};">ANÁLISIS SÍSMICO REGISTRADOS EN EL PERÚ (1960_2022)</h3>', unsafe_allow_html=True)
