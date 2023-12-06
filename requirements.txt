@@ -9,3 +9,4 @@ Pillow
 openpyxl
 geopandas
 shapely
+cv2
