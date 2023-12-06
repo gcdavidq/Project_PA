@@ -160,7 +160,7 @@ def visualizacion_a_nivel_nacional(archivo):
 
                 color_ub = ""                                   
                 mapa = fl.Map(location=[df_filtrado_opcion['LATITUD'].mean(), df_filtrado_opcion['LONGITUD'].mean()], 
-                            zoom_start=5, max_zoom=12, control_scale=True)
+                            zoom_start=4.6, max_zoom=12, control_scale=True)
 
                 for index, row in df_filtrado_opcion.iterrows():
                     if row['PROFUNDIDAD'] < 70:
@@ -196,16 +196,29 @@ def visualizacion_a_nivel_nacional(archivo):
                 # Agregar la leyenda al mapa
                 mapa.get_root().html.add_child(legend)
                 st.markdown(
-                        '<div style="background-color: white; padding: 10px;border-radius: 10px;">'
-                        ' Ya seleccionada la fecha, se observarán dos gráficos, el primero es un mapa con ubicaciones marcadas y el segundo un gráfico de barras.'
-                        ' La información de la frecuencia de eventos lo podemos diferenciar gracias al sengundo gráfico, cada una de las barras indica el nivel de profundidad.'
-                        ' Cada nivel está representada por rangos que posee un color característico que indica lo siguiente: el de color rojo hace referencia a sismos superficiales (0-70 km de profundidad);'
-                        ' el de color naranja a sismos intermedios (70-300 km de profundidad); y la de color verde a sismos profundos (más de 300 km de profundidad). En el mapa, también lo podemos'
-                        ' ubicar con la lectura de la leyenda.'
-                        '</div>',
-                        unsafe_allow_html=True
-                    ) 
-                st.components.v1.html(mapa._repr_html_(), width=800, height=600)
+                    """
+                    <div style="background-color: white; padding: 15px; border-radius: 10px;">
+                        <p>
+                            Una vez seleccionada la fecha, podrás observar dos gráficos. El primero es un mapa con ubicaciones marcadas,
+                            mientras que el segundo es un gráfico de barras. La información sobre la frecuencia de eventos se presenta en
+                            el segundo gráfico, donde cada barra indica el nivel de profundidad.
+                        </p>
+                        <p>
+                            Cada nivel está representado por rangos de colores característicos:
+                        </p>
+                        <ul>
+                            <li>Rojo: Sismos superficiales (0-70 km de profundidad)</li>
+                            <li>Naranja: Sismos intermedios (70-300 km de profundidad)</li>
+                            <li>Verde: Sismos profundos (más de 300 km de profundidad)</li>
+                        </ul>
+                        <p>
+                            En el mapa, también puedes ubicar estos niveles mediante la lectura de la leyenda.
+                        </p>
+                    </div>
+                    """,
+                    unsafe_allow_html=True
+                )
+                st.components.v1.html(mapa._repr_html_(), width=710, height=470)
                  
                 # Asignamos los colores para identificarlo en el gráfico de barras
                 colores_barras = ['red', 'orange', 'green']
@@ -246,7 +259,9 @@ def visualizacion_a_nivel_nacional(archivo):
                     tex = f"-{max_anio}"
                     texto_max =  " entre los años "
                     texto_max2 = f"{min_anio} - {max_anio}"
-                fig.update_layout(title={'text': f'Frecuencia de Sismos en Rangos de Profundidad ({min_anio}{tex})','x': 0.2,},xaxis_title='Rango de Profundidad (Km)',yaxis_title='Frecuencia')
+                fig.update_layout(title={'text': f'Frecuencia de Sismos en Rangos de Profundidad ({min_anio}{tex})','x': 0.2,},xaxis_title='Rango de Profundidad (Km)',yaxis_title='Frecuencia',height=500,width=712)
+                # Agrega bordes a las barras
+                fig.update_traces(marker=dict(line=dict(color='black', width=1)), selector=dict(type='bar'))
                 st.plotly_chart(fig)
                 st.subheader("Después de visualizar el mapa y el gráfico de barras, se detalla lo siguiente: ")  
                 
