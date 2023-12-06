@@ -14,22 +14,28 @@ page_bg_video = """
         overflow: hidden;
     }
 
-    iframe {
+    video {
         position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: auto;
         z-index: -1;
     }
     </style>
 
-    <iframe src="https://assets.pinterest.com/ext/embed.html?id=710513278733252311" height="354" width="450" frameborder="0" scrolling="no" ></iframe>
+    <video autoplay loop muted playsinline>
+        <source src="p1.mp4" type="video/mp4">
+        Tu navegador no soporta el elemento de video.
+    </video>
 """
 
 st.markdown(page_bg_video, unsafe_allow_html=True)
 
-image1 = Image.open('image.jpg')
+image1 = Image.open('Img_3.jpg')
 
 # Añadimos un panel de control
 tab1, tab2, tab3 = st.tabs([  "Inicio", "Análisis a nivel nacional", "Anális a nivel departamental"])
