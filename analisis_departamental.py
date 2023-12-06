@@ -141,11 +141,12 @@ def show_departments_count(data):
         st.write(f'Se muestran todos los sismos de todos los departamentos.')
         print("Data (Todos):", data)
         create_map(data)
-    elif not selected_values:
+        elif not selected_values:
         st.warning("No se han seleccionado departamentos. ")
         ##Creamos un mapa vació con enfoque a Perú.
         peru_center_coords = [-9.1900, -75.0152]
         peru_map = folium.Map(location=peru_center_coords, zoom_start=4.8)
+        st.components.v1.html(peru_map._repr_html_(), width=800, height=600, scrolling=True)
     else:
         # Hay departamentos seleccionados
         filtered_data = data[data[selected_column].isin(selected_values)]
