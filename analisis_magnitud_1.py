@@ -178,6 +178,3 @@ def mostrar_dashboard(archivo_excel):
         key="download_map"
     )
 
-if __name__ == "__main__":
-    archivo_excel = "Catalogo1960_2022.csv"
-    mostrar_dashboard(archivo_excel)
