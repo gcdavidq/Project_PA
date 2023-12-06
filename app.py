@@ -37,21 +37,21 @@ tab_styles = [
 for i, col in enumerate(tabs):
     col.markdown(f"<h1 style='{tab_styles[i]}'>{['Inicio', 'Análisis a nivel nacional', 'Análisis a nivel departamental'][i]}</h1>", unsafe_allow_html=True)
 
-#####
-with tab1:
-    st.image(image1)
-
-# Análisis a nivel nacional
-with tab2:
-    visualizacion_a_nivel_nacional("Catalogo1960_2022.csv")
-
-
-# Análisis a nivel departamental
-with tab3:
-    st.header("Análisis Departamental")
-    department_boundaries = load_department_boundaries()
-    file_path = 'Proyecto_final.csv'
-    data = load_data(file_path)
-    merged_data = assign_departments(data, department_boundaries)
-    show_departments_count(merged_data)
+    #####
+    with tab1:
+        st.image(image1)
+    
+    # Análisis a nivel nacional
+    with tab2:
+        visualizacion_a_nivel_nacional("Catalogo1960_2022.csv")
+    
+    
+    # Análisis a nivel departamental
+    with tab3:
+        st.header("Análisis Departamental")
+        department_boundaries = load_department_boundaries()
+        file_path = 'Proyecto_final.csv'
+        data = load_data(file_path)
+        merged_data = assign_departments(data, department_boundaries)
+        show_departments_count(merged_data)
 
