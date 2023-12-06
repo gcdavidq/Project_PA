@@ -141,61 +141,6 @@ def visualizacion_a_nivel_nacional(archivo):
                 "Por",
                 ("rango de años", ""),
                 index=None, placeholder="Seleccione . . .")
-            
-            
-        # if op_fecha2 == "años puntuales":
-        #     fe_punt = st.multiselect(
-        #         "El año puntual de búsqueda es:",
-        #         anios_comprendidos, placeholder="elija")
-
-        #     if fe_punt:
-        #         # Almacenamos los años puntuales seleccionados para después usarlos como filtro
-        #         fe_punt = list(map(int, fe_punt))
-
-        #         # Filtrarmos el DataFrame para incluir solo los años seleccionados
-        #         df_filtrado_opcion = df[df['Anio'].astype(int).isin(fe_punt)]
-
-        #         color_ub = ""                                   
-        #         mapa = fl.Map(location=[df_filtrado_opcion['LATITUD'].mean(), df_filtrado_opcion['LONGITUD'].mean()], 
-        #                     zoom_start=5, max_zoom=12, control_scale=True)
-
-        #         for index, row in df_filtrado_opcion.iterrows():
-        #             if row['PROFUNDIDAD'] < 70:
-        #                 color_ub = "red"
-        #             elif (row['PROFUNDIDAD'] >= 70) and (row['PROFUNDIDAD'] < 300):
-        #                 color_ub = "orange"
-        #             elif row['PROFUNDIDAD'] >= 300:
-        #                 color_ub = "green"
-
-        #             fl.Marker([row['LATITUD'], row['LONGITUD']], icon=fl.Icon(color=color_ub, icon="circle", prefix="fa"),
-        #                     popup=f"Profundidad: {row['PROFUNDIDAD']} km\nMagnitud: {row['MAGNITUD']}").add_to(mapa)
-
-        #         # Construimos la leyenda en HTML
-        #         legend_html = """
-        #             <div style="position: fixed; 
-        #                         bottom: 50px; left: 50px; width: 150px; height: 100px; 
-        #                         border:3px solid grey; z-index:9999; font-size:14px;
-        #                         background-color:white;text-align: center;
-        #                         border-radius: 6px;">
-        #                 &nbsp; <span style="text-decoration: underline;", class="font-monospace">Leyenda</span> <br>
-        #                 &nbsp; <span class="font-monospace">Superficiales</span> &nbsp; 
-        #                 <i class="fa fa-map-marker" style="color:red"></i><br>
-        #                 &nbsp; <span class="font-monospace">Intermedios</span> &nbsp; 
-        #                 <i class="fa fa-map-marker" style="color:orange"></i><br>
-        #                 &nbsp; <span class="font-monospace">Profundos</span> &nbsp; 
-        #                 <i class="fa fa-map-marker" style="color:green"></i><br>
-        #             </div>
-        #         """
-        #         # Convertimos la leyenda HTML a un objeto de Folium
-        #         legend = fl.Element(legend_html)
-        #         # Agregamos la leyenda al mapa
-        #         mapa.get_root().html.add_child(legend)
-        #         # Mostramos el mapa en Streamlit
-        #         st.components.v1.html(mapa._repr_html_(), width=800, height=600)
-        #     else:
-        #         mapa = fl.Map(location=[-9.189967, -75.015152], zoom_start=5)
-        #         folium_static(mapa) 
-
 
         if op_fecha2 == "rango de años":
             with col2:
@@ -251,7 +196,7 @@ def visualizacion_a_nivel_nacional(archivo):
                 # Agregar la leyenda al mapa
                 mapa.get_root().html.add_child(legend)
                 st.markdown(
-                        '<div style="background-color: white; padding: 10px;">'
+                        '<div style="background-color: white; padding: 10px;border-radius: 10px;">'
                         ' Ya seleccionada la fecha, se observarán dos gráficos, el primero es un mapa con ubicaciones marcadas y el segundo un gráfico de barras.'
                         ' La información de la frecuencia de eventos lo podemos diferenciar gracias al sengundo gráfico, cada una de las barras indica el nivel de profundidad.'
                         ' Cada nivel está representada por rangos que posee un color característico que indica lo siguiente: el de color rojo hace referencia a sismos superficiales (0-70 km de profundidad);'
