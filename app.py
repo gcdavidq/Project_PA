@@ -22,7 +22,7 @@ st.markdown(page_bg_img, unsafe_allow_html=True)
 image1 = Image.open('image1.png')
 
 # Añadimos un panel de control
-tab1, tab2, tab3 = st.tabs(["Inicio", "Análisis a nivel nacional", "Anális a nivel departamental"])
+tab1, tab2, tab3 = st.tabs([ '<div style="background-color: white; padding: 10px;">' "Inicio", "Análisis a nivel nacional", "Anális a nivel departamental"])
 
 with tab1:
     st.image(image1)
