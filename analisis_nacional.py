@@ -34,7 +34,7 @@ def visualizacion_a_nivel_nacional(archivo):
 
     # Texto con fondo blanco usando markdown
     st.markdown(
-        '<div style="background-color: white; padding: 10px;border-radius: 10px;">'
+        '<div style="color: white;">'
         '<h>En esta sección, se presenta el análisis de la concurrencia de eventos sísmicos mediante un mapa de calor, '
         'junto con la distribución de estos por profundidad. Esta última, ya sea superficial, intermedia'
         ' o profunda, influye en la forma en que el sismo afecta a la superficie, por ende, el potencial destructivo.'
