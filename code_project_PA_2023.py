@@ -1,3 +1,4 @@
+import Codigo_2 as cd
 import streamlit as st
 import folium as fl
 from streamlit_folium import folium_static
@@ -302,4 +303,4 @@ with tab2:
 with tab3:
    st.header("An owl")
    st.image("https://static.streamlit.io/examples/owl.jpg", width=500)
-   Codigo_2()
+   cd.main()
