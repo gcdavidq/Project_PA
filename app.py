@@ -21,12 +21,12 @@ page_bg_img = """
 st.markdown(page_bg_img, unsafe_allow_html=True)
 
 image1 = Image.open('Img_3.jpeg')
-color = 'blue'
+
 # Añadimos un panel de control
 tab1, tab2, tab3 = st.tabs(["_Streamlit_ is :blue[_Inicio_] :sunglasses:", "Análisis a nivel nacional", "Anális a nivel departamental"])
 
 with tab1:
-    
+    color = 'blue'
     st.subheader('ANÁLISIS SÍSMICO REGISTRADOS EN EL PERÚ (1960_2022)').style('color: {}'.format(color))
     st.image(image1)
 
