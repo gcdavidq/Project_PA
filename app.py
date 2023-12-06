@@ -29,7 +29,7 @@ tab1, tab2, tab3 = st.tabs([":blue[**INICIO**]", ":blue[_**ANÁLISIS A NIVEL NAC
 with tab1:
     font_style_cooper_black = 'font-family: "Cooper Black", sans-serif;';
     color = '#da70d6'  
-    st.markdown(f'<h3 style="color:{color}; font-family: Cooper Black, sans-serif;">ANÁLISIS SÍSMICO REGISTRADOS EN EL PERÚ (1960_2022)</h3>', unsafe_allow_html=True)
+    st.markdown(f'<h1 style="color:{color}; font-family: Cooper Black, sans-serif;">ANÁLISIS SÍSMICO REGISTRADOS EN EL PERÚ (1960_2022)</h1>', unsafe_allow_html=True)
 
     st.image(image1)
 
