@@ -30,9 +30,6 @@ def visualizacion_a_nivel_nacional(archivo):
 
     st.markdown("<h2 style='text-align: left; color: #90ee90; font-family: monospace;'>Mapa de calor de eventos sísmicos por concurrencia en zonas geográficas y distribución por profundidad</h2>", unsafe_allow_html=True)
 
-    
-
-    # Texto con fondo blanco usando markdown
     st.markdown(
         '<div style="color: white;">'
         '<h>En esta sección, se presenta el análisis de la concurrencia de eventos sísmicos mediante un mapa de calor, '
