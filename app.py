@@ -27,14 +27,6 @@ tab1, tab2, tab3 = st.tabs(["_Streamlit_ is :blue[_Inicio_] :sunglasses:", "Aná
 
 with tab1:
     st.image(image1)
-    '</div>
-    <br>
-    <br>
-    
-      <center><h2 style="color:purple;"><b><i>PERÚ</i></b></h2></center>
-    
-    <br>
-    <div>'
 
 # Análisis a nivel nacional
 with tab2:
