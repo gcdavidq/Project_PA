@@ -24,7 +24,7 @@ def mostrar_dashboard(archivo_excel):
     max_year = df['Año'].astype(int).max()
     #----------------------------------------------------------------------------
     st.subheader(' MAGNITUD DE LOS SISMOS TOMANDO EN CUENTA LOS AÑOS')
-    st.text("SELECCIONE EL RANGO DE AÑOS EN EL QUE DESEA VER LAS TABLAS Y EL GRAFICO DE MAGNITUD")
+    st.text("SELECCIONE EL RANGO DE AÑOS EN EL QUE DESEA VER EL GRAFICO DE MAGNITUD")
     selected_year = st.slider('Seleccione:',
                                     min_value=min_year,
                                     max_value=max_year,
@@ -45,8 +45,7 @@ def mostrar_dashboard(archivo_excel):
                                                         'FRECUENCIA_MAGNITUD': conteo_rangos_magnitud_filtrado.values})
 
     # Mostrar los DataFrames en Streamlit
-    st.text("TABLA DE FRECUENCIA PARA UN RANGO DE MAGNITUD")
-
+    
     # Crear gráfico Plotly Express con el Dataframe de Rangos actualizado
     fig_ = px.bar(df_conteo_rangos_magnitud_filtrado, x='RANGO_MAGNITUD', y='FRECUENCIA_MAGNITUD', color='RANGO_MAGNITUD', labels={'FRECUENCIA_MAGNITUD': 'Frecuencia'})
     fig_.update_layout(title=f'Frecuencia de Sismos en Rangos de Magnitud ({selected_year[0]} - {selected_year[1]})', xaxis_title='Rango de Magnitud', yaxis_title='Frecuencia')
@@ -146,7 +145,8 @@ def mostrar_dashboard(archivo_excel):
         folium_static(mapa_filtrado_opcion)
     else:
         st.warning("No hay datos disponibles para los filtros seleccionados.")
-    
+
+    st.text("TABLA DE FRECUENCIA PARA UN RANGO DE MAGNITUD")
     st.dataframe(df_conteo_rangos_magnitud_filtrado)
 
     # Agregar botón de descarga para el gráfico de barras
