@@ -38,6 +38,7 @@ def create_map(data):
 
         # Mapa de puntos
         m = folium.Map(location=[-9.1900, -75.0152], zoom_start=5)
+        st.components.v1.html(peru_map._repr_html_(), width=700, height=500, scrolling=True)
         for index, row in data.iterrows():
             # Calcular el color en función de la magnitud y profundidad
             color = f'rgba(0, 0, 0, {row["normalized_magnitude"] * 0.8})'
