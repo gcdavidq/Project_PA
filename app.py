@@ -27,7 +27,7 @@ tab1, tab2, tab3 = st.tabs(["_Streamlit_ is :blue[_Inicio_] :sunglasses:", "Aná
 
 with tab1:
     color = 'blue'
-    st.subheader('ANÁLISIS SÍSMICO REGISTRADOS EN EL PERÚ (1960_2022)').style('color: {}'.format(color))
+    st.markdown(f'<h3 style="color:{color};">ANÁLISIS SÍSMICO REGISTRADOS EN EL PERÚ (1960_2022)</h3>', unsafe_allow_html=True)
     st.image(image1)
 
 # Análisis a nivel nacional
