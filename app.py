@@ -21,50 +21,23 @@ st.markdown(page_bg_img, unsafe_allow_html=True)
 
 image1 = Image.open('image1.png')
 
-######################
-# Establecer el estilo de fuente y colores
-estilo_fuente = "Cooper Black"
-color_fondo = "#f0f0f0"  # Puedes ajustar este color según tus preferencias
-color_texto = "#1f1f1f"  # Puedes ajustar este color según tus preferencias
+# Añadimos un panel de control
+tab1, tab2, tab3 = st.tabs(["Inicio", "Análisis a nivel nacional", "Anális a nivel departamental"])
 
-# Aplicar el estilo a las pestañas directamente
-with st.beta_container():
-    with st.beta_container():
-        st.title("Inicio")
-        # Agregar contenido para la pestaña de inicio aquí
-        st.image(image1)
+with tab1:
+    st.image(image1)
 
-with st.beta_container():
-    with st.beta_container():
-        st.title("Análisis a nivel nacional")
-        # Agregar contenido para la pestaña de análisis nacional aquí
-        visualizacion_a_nivel_nacional("Catalogo1960_2022.csv")
+# Análisis a nivel nacional
+with tab2:
+    visualizacion_a_nivel_nacional("Catalogo1960_2022.csv")
 
-with st.beta_container():
-    with st.beta_container():
-        st.title("Análisis a nivel departamental")
-        # Agregar contenido para la pestaña de análisis departamental aquí
-        st.header("Análisis Departamental")
-        department_boundaries = load_department_boundaries()
-        file_path = 'Proyecto_final.csv'
-        data = load_data(file_path)
-        merged_data = assign_departments(data, department_boundaries)
-        show_departments_count(merged_data)
 
-# Aplicar el estilo de fuente y colores a todo el contenido
-st.markdown(
-    f"""
-    <style>
-        .reportview-container {{
-            background-color: {color_fondo};
-            color: {color_texto};
-            font-family: "{estilo_fuente}", sans-serif;
-        }}
-        .sidebar .sidebar-content {{
-            background-color: {color_fondo};
-        }}
-    </style>
-    """,
-    unsafe_allow_html=True,
-)
+# Análisis a nivel departamental
+with tab3:
+    st.header("Análisis Departamental")
+    department_boundaries = load_department_boundaries()
+    file_path = 'Proyecto_final.csv'
+    data = load_data(file_path)
+    merged_data = assign_departments(data, department_boundaries)
+    show_departments_count(merged_data)
 
