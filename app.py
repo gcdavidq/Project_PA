@@ -30,7 +30,7 @@ with tab1:
 
 # Análisis a nivel nacional
 with tab2:
-    visualizacion_a_nivel_nacional("Catalogo1960_2022.xlsx")
+    visualizacion_a_nivel_nacional("Catalogo1960_2022.csv")
 
 
 # Análisis a nivel departamental
