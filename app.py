@@ -7,27 +7,15 @@ st.set_page_config(
     page_icon="volcano",
     initial_sidebar_state="expanded",
 )
-page_bg_video = f"""
+page_bg_video = """
     <style>
-    [data-testid="stAppViewContainer"] > .main {{
-        position: relative;
-    }}
-
-    [data-testid="stAppViewContainer"] > .main video {{
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }}
+    body {
+        background: url("p1.mp4") no-repeat center center fixed;
+        background-size: cover;
+    }
     </style>
-
-    <video autoplay loop muted playsinline>
-        <source src="p1.mp4" type="video/mp4">
-        Tu navegador no soporta el elemento de video.
-    </video>
 """
+
 st.markdown(page_bg_img, unsafe_allow_html=True)
 
 image1 = Image.open('image.jpg')
