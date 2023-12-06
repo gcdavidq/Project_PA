@@ -13,7 +13,7 @@ page_bg_img = """
     <style>
     [data-testid="stAppViewContainer"] > .main {
         background-image: url("https://raw.githubusercontent.com/gcdavidq/Project_PA/main/im1.jpg");
-        background-size: 100% 100%;
+        background-size: 100% auto;
         background-position: center;
         background-attachment: local;
     }
