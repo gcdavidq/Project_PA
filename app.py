@@ -41,7 +41,7 @@ with tab1:
 with tab2:
     visualizacion_a_nivel_nacional("Catalogo1960_2022.csv")
     cargar_datos ("Catalogo1960_2022.csv")
-    extraer_columnas_fecha ()
+    extraer_columnas_fecha (df)
     crear_slider_ano ()
     actualizar_dataframe_rangos_magnitud ()
     crear_grafico_barras ()
