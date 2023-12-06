@@ -23,8 +23,7 @@ image1 = Image.open('image1.png')
 
 # Añadimos un panel de control
 # Crear las pestañas
-col1, col2, col3 = st.columns(3)
-tabs = [col1, col2, col3]
+tab1, tab2, tab3 = st.beta_columns(3)
 
 # Estilos de letra y color personalizados
 tab_styles = [
@@ -34,20 +33,21 @@ tab_styles = [
 ]
 
 # Aplicar estilos de letra y color a las pestañas
-for i, col in enumerate(tabs):
-    col.markdown(f"<h1 style='{tab_styles[i]}'>{['Inicio', 'Análisis a nivel nacional', 'Análisis a nivel departamental'][i]}</h1>", unsafe_allow_html=True)
+tab1.markdown(f"<h1 style='{tab_styles[0]}'>Inicio</h1>", unsafe_allow_html=True)
+tab2.markdown(f"<h1 style='{tab_styles[1]}'>Análisis a nivel nacional</h1>", unsafe_allow_html=True)
+tab3.markdown(f"<h1 style='{tab_styles[2]}'>Análisis a nivel departamental</h1>", unsafe_allow_html=True)
 
     #####
-with col1:
+with tab1:
     st.image(image1)
 
 # Análisis a nivel nacional
-with col2:
+with tab2:
     visualizacion_a_nivel_nacional("Catalogo1960_2022.csv")
 
 
 # Análisis a nivel departamental
-with col3:
+with tab3:
     st.header("Análisis Departamental")
     department_boundaries = load_department_boundaries()
     file_path = 'Proyecto_final.csv'
