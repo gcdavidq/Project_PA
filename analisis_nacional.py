@@ -116,17 +116,6 @@ def visualizacion_a_nivel_nacional(archivo):
                 
                     with col3:
                         st.components.v1.html(mapa._repr_html_(), width=710, height=470)
-
-                        st.markdown(
-                            '<div style="color: white;">'
-                            '<h>Después de visualizar el mapa de calor, p'
-                            'junto con la distribución de estos por profundidad. Esta última, ya sea superficial, intermedia'
-                            ' o profunda, influye en la forma en que el sismo afecta a la superficie, por ende, el potencial destructivo.'
-                            ' A continuación, se ofrece la opción de búsqueda de eventos por fechas, ya sea de manera puntual o en rangos,'
-                            ' acompañada de una gráfica estadística para facilitar su comprensión.</h>'
-                            '</div>',
-                            unsafe_allow_html=True
-                        )
                 else: 
                     with col3: 
                         mapa = fl.Map(location=[-9.189967, -75.015152], zoom_start=5)
