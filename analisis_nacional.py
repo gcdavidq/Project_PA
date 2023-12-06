@@ -8,53 +8,53 @@ import pandas as pd
 # Análisis a nivel nacional
 def visualizacion_a_nivel_nacional(archivo):
    # Leemos nuestro data set
-    df = pd.read_excel(archivo)
+   df = pd.read_excel(archivo)
 
-    # Extraemos Año, Mes y Día de la columna Fecha_UTC del data set
-    df["Anio"] = df["FECHA_UTC"].astype(str).str[:4]
-    df["Mes"] = df["FECHA_UTC"].astype(str).str[4:6]
-    df["Dia"] = df["FECHA_UTC"].astype(str).str[6:]
+   # Extraemos Año, Mes y Día de la columna Fecha_UTC del data set
+   df["Anio"] = df["FECHA_UTC"].astype(str).str[:4]
+   df["Mes"] = df["FECHA_UTC"].astype(str).str[4:6]
+   df["Dia"] = df["FECHA_UTC"].astype(str).str[6:]
 
-    # Encontramos el mínimo y el máximo de años comprendidos
-    min_anio = df["Anio"].astype(int).min()
-    max_anio = df["Anio"].astype(int).max()
-    min_prof = df["PROFUNDIDAD"].astype(int).min()
-    max_prof = df["PROFUNDIDAD"].astype(int).max()
+   # Encontramos el mínimo y el máximo de años comprendidos
+   min_anio = df["Anio"].astype(int).min()
+   max_anio = df["Anio"].astype(int).max()
+   min_prof = df["PROFUNDIDAD"].astype(int).min()
+   max_prof = df["PROFUNDIDAD"].astype(int).max()
 
-    selected_min_anio = min_anio
-    selected_max_anio = max_anio
+   selected_min_anio = min_anio
+   selected_max_anio = max_anio
 
-    anios_comprendidos = []
-    for i in range(min_anio, max_anio + 1):
-        anios_comprendidos.append(i)
+   anios_comprendidos = []
+   for i in range(min_anio, max_anio + 1):
+      anios_comprendidos.append(i)
 
-    st.markdown("<h2 style='text-align: left; color: #90ee90; font-family: monospace;'>Mapa de calor de eventos sísmicos por concurrencia en zonas geográficas y distribución por profundidad</h2>", unsafe_allow_html=True)
+   st.markdown("<h2 style='text-align: left; color: #90ee90; font-family: monospace;'>Mapa de calor de eventos sísmicos por concurrencia en zonas geográficas y distribución por profundidad</h2>", unsafe_allow_html=True)
 
-    st.markdown(
-        '<div style="color: white;">'
-        '<h>En esta sección, se presenta el análisis de la concurrencia de eventos sísmicos mediante un mapa de calor, '
-        'junto con la distribución de estos por profundidad. Esta última, ya sea superficial, intermedia'
-        ' o profunda, influye en la forma en que el sismo afecta a la superficie, por ende, el potencial destructivo.'
-        ' A continuación, se ofrece la opción de búqueda de eventos por fechas, ya sea de manera puntual o en rangos,'
-        ' acompañada de una gráfica estadística para facilitar su comprensión.</h>'
-        '</div>',
-        unsafe_allow_html=True
-    )
-    st.divider()
-    col1, col2 = st.columns(2)
-    col3, col4 = st.columns(2)
-    with col1:
-        # Selección del tipo de búsqueda
-        st.write("Seleccione la foma de búsqueda:")
-        opcion = st.radio( 
-            "Mostrar los eventos por",
-            [ "**Mapa de calor**","**Distribución por porfundidad**"],
-            captions = ["*con opción de búsqueda por fechas.*", "*con opción de búsqueda por fechas.*"],
-            index=None)
+   st.markdown(
+      '<div style="color: white;">'
+      '<h>En esta sección, se presenta el análisis de la concurrencia de eventos sísmicos mediante un mapa de calor, '
+      'junto con la distribución de estos por profundidad. Esta última, ya sea superficial, intermedia'
+      ' o profunda, influye en la forma en que el sismo afecta a la superficie, por ende, el potencial destructivo.'
+      ' A continuación, se ofrece la opción de búqueda de eventos por fechas, ya sea de manera puntual o en rangos,'
+      ' acompañada de una gráfica estadística para facilitar su comprensión.</h>'
+      '</div>',
+      unsafe_allow_html=True
+   )
+   st.divider()
+   col1, col2 = st.columns(2)
+   col3, col4 = st.columns(2)
+   with col1:
+      # Selección del tipo de búsqueda
+      st.write("Seleccione la foma de búsqueda:")
+      opcion = st.radio( 
+         "Mostrar los eventos por",
+         [ "**Mapa de calor**","**Distribución por porfundidad**"],
+         captions = ["*con opción de búsqueda por fechas.*", "*con opción de búsqueda por fechas.*"],
+         index=None)
       
-    with col2:   
-        # Mostraremos la información correspondiente a la opción seleccionada
-        st.markdown(f"*Filtro de información de: {opcion}*")
+   with col2:   
+      # Mostraremos la información correspondiente a la opción seleccionada
+      st.markdown(f"*Filtro de información de: {opcion}*")
 
    if opcion == None:
            # Inicializamos la previsualización con el mapa centrado 
