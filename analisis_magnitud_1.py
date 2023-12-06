@@ -132,7 +132,7 @@ def mostrar_dashboard(archivo_excel):
     # Actualizar el mapa con los filtros de opción de selección
     if not df_filtrado_opcion.empty:
         mapa_filtrado_opcion = folium.Map(location=[df_filtrado_opcion['LATITUD'].iloc[0], df_filtrado_opcion['LONGITUD'].iloc[0]],
-                                        zoom_start=3, control_scale=True, prefer_canvas=True)  # Nuevos parámetros
+                                        zoom_start=4.5, control_scale=True, prefer_canvas=True)  # Nuevos parámetros
 
         for i, row in df_filtrado_opcion.iterrows():
             # Personalizar el icono del marcador
