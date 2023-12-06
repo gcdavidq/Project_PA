@@ -7,8 +7,6 @@ st.set_page_config(
     page_icon="volcano",
     initial_sidebar_state="expanded",
 )
-st.set_page_config(layout="wide")
-
 video_html = """
 		<style>
 
