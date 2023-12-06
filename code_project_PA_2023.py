@@ -8,7 +8,6 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 from PIL import Image
-from Codigo_2 import main
 
 page_bg_img = f"""
     <style>
