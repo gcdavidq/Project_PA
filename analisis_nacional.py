@@ -188,7 +188,7 @@ def visualizacion_a_nivel_nacional(archivo):
                 mapa.get_root().html.add_child(legend)
                 st.markdown(
                     """
-                    <div style="background-color: white; padding: 15px; border-radius: 10px;">
+                    <div style="color: white;">
                         <p>
                             Una vez seleccionada la fecha, podrás observar dos gráficos. El primero es un mapa con ubicaciones marcadas,
                             mientras que el segundo es un gráfico de barras. La información sobre la frecuencia de eventos se presenta en
