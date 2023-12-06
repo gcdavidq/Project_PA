@@ -124,6 +124,7 @@ def mostrar_dashboard(archivo_excel):
     max_month_option_num = meses_a_numeros[max_month_option]
 
     # Filtrar el DataFrame por los rangos seleccionados
+    mapa_filtrado_opcion=None
     df_filtrado_opcion = df[
         (df['Año'].astype(int) >= min_year_option) & (df['Mes'].astype(int) >= int(min_month_option_num)) &
         (df['Año'].astype(int) <= max_year_option) & (df['Mes'].astype(int) <= int(max_month_option_num)) &
@@ -143,9 +144,12 @@ def mostrar_dashboard(archivo_excel):
 
         # Agregar capa adicional de Stamen Watercolor
         folium.TileLayer('Stamen Watercolor', attr='OpenStreetMap contributors').add_to(mapa_filtrado_opcion) 
-        folium_static(mapa_filtrado_opcion)
     else:
         st.warning("No hay datos disponibles para los filtros seleccionados.")
+    if mapa_filtrado_opcion is not None:
+        folium_static(mapa_filtrado_opcion)
+    else:
+        st.warning("No hay datos disponibles para los filtros seleccionados. No se pudo mostrar el mapa")
     
 
     # Agregar botón de descarga para el gráfico de barras
