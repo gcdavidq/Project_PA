@@ -6,7 +6,7 @@ import plotly.express as px
 import pandas as pd
 
 # Análisis a nivel nacional
-def visualizacion_a_nivel_nacional(archivo):
+def analisis_nacional(archivo):
    # Leemos nuestro data set
    df = pd.read_excel(archivo)
 
