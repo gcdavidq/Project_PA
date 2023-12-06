@@ -23,9 +23,8 @@ image1 = Image.open('image1.png')
 
 # Añadimos un panel de control
 # Crear las pestañas
-tab1, tab2, tab3 = st.beta_columns(3)
+tab1, tab2, tab3 = st.columns(3)
 
-# Estilos de letra y color personalizados
 tab_styles = [
     "font-size: 20px; font-weight: bold; color: #1f78b4;",  # Inicio
     "font-size: 20px; font-weight: bold; color: #33a02c;",  # Análisis a nivel nacional
