@@ -14,23 +14,17 @@ page_bg_video = """
         overflow: hidden;
     }
 
-    video {
+    iframe {
         position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        min-width: 100%;
-        min-height: 100%;
-        width: auto;
-        height: auto;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
         z-index: -1;
     }
     </style>
 
-    <video autoplay loop muted playsinline>
-        <source src="https://youtu.be/2TVuhNCoOAs?si=bUQDL2hfiwNSdu3l/p1.mp4" type="video/mp4">
-        Tu navegador no soporta el elemento de video.
-    </video>
+    <iframe src="https://assets.pinterest.com/ext/embed.html?id=710513278733252311" height="354" width="450" frameborder="0" scrolling="no" ></iframe>
 """
 
 st.markdown(page_bg_video, unsafe_allow_html=True)
