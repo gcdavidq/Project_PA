@@ -27,7 +27,8 @@ image1 = Image.open('Imagen_Mapa_Peru.jpeg')
 tab1, tab2, tab3 = st.tabs([":blue[**INICIO**]", ":blue[_**ANÁLISIS A NIVEL NACIONAL**_]", ":blue[_**ANÁLISIS A NIVEL DEPARTAMENTAL**_]"])
 
 with tab1:
-    font_style = 'font-weight: bolder;'
+    font_style_cooper_black = 'font-family: "Cooper Black", sans-serif;';
+
 
       # Puedes usar 'italic', 'oblique', 'normal', 'bold', etc.
     color = '#da70d6'  # Puedes usar nombres de colores o códigos hexadecimales
