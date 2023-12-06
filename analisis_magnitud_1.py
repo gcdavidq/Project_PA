@@ -130,6 +130,7 @@ def mostrar_dashboard(archivo_excel):
         (df['MAGNITUD'] >= min_selected_value_7_5) & (df['MAGNITUD'] <= max_selected_value_7_5)
     ]
 
+    mapa_filtrado_opcion=None
     # Actualizar el mapa con los filtros de opción de selección
     if not df_filtrado_opcion.empty:
         mapa_filtrado_opcion = folium.Map(location=[df_filtrado_opcion['LATITUD'].iloc[0], df_filtrado_opcion['LONGITUD'].iloc[0]],
@@ -143,13 +144,14 @@ def mostrar_dashboard(archivo_excel):
 
         # Agregar capa adicional de Stamen Watercolor
         folium.TileLayer('Stamen Watercolor', attr='OpenStreetMap contributors').add_to(mapa_filtrado_opcion) 
-
-
-
-        # Mostrar el mapa filtrado en Streamlit
-        folium_static(mapa_filtrado_opcion)
     else:
         st.warning("No hay datos disponibles para los filtros seleccionados.")
+    #Mostrar el mapa:
+    if mapa_filtrado_opcion is not None:
+        folium_static(mapa_filtrado_opcion)
+    else:
+        st.warning("No hay datos disponibles para los filtros seleccionados. No se pudo mostrar el mapa)
+    
 
     # Agregar botón de descarga para el gráfico de barras
     dataframe_download_button = st.download_button(
