@@ -142,7 +142,9 @@ def mostrar_dashboard(archivo_excel):
                         icon=folium.Icon(color='blue', icon='info-sign')).add_to(mapa_filtrado_opcion)  # Cambiar el color y el icono
 
         # Agregar capa adicional de Stamen Watercolor
-        folium.TileLayer('Stamen Watercolor').add_to(mapa_filtrado_opcion)
+        folium.TileLayer('Stamen Watercolor', attr='OpenStreetMap contributors').add_to(mapa_filtrado_opcion) 
+
+
 
         # Mostrar el mapa filtrado en Streamlit
         folium_static(mapa_filtrado_opcion)
