@@ -22,21 +22,8 @@ st.markdown(page_bg_img, unsafe_allow_html=True)
 image1 = Image.open('image1.png')
 
 # Añadimos un panel de control
-# Crear las pestañas
-tab1, tab2, tab3 = st.columns(3)
+tab1, tab2, tab3 = st.tabs(["Inicio", "Análisis a nivel nacional", "Anális a nivel departamental"])
 
-tab_styles = [
-    "font-size: 20px; font-weight: bold; color: #1f78b4;",  # Inicio
-    "font-size: 20px; font-weight: bold; color: #33a02c;",  # Análisis a nivel nacional
-    "font-size: 20px; font-weight: bold; color: #e31a1c;",  # Análisis a nivel departamental
-]
-
-# Aplicar estilos de letra y color a las pestañas
-tab1.markdown(f"<h1 style='{tab_styles[0]}'>Inicio</h1>", unsafe_allow_html=True)
-tab2.markdown(f"<h1 style='{tab_styles[1]}'>Análisis a nivel nacional</h1>", unsafe_allow_html=True)
-tab3.markdown(f"<h1 style='{tab_styles[2]}'>Análisis a nivel departamental</h1>", unsafe_allow_html=True)
-
-    #####
 with tab1:
     st.image(image1)
 
@@ -53,4 +40,3 @@ with tab3:
     data = load_data(file_path)
     merged_data = assign_departments(data, department_boundaries)
     show_departments_count(merged_data)
-
