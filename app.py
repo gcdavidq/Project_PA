@@ -18,28 +18,29 @@ if video_file is not None:
         f"""
         <style>
         body {{
-            margin: 0;
-            overflow: hidden;
+           margin: 0;
+           overflow: hidden;
         }}
         
         video {{
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: -1;
+           position: fixed;
+           top: 0;
+           left: 0;
+           width: 100%;
+           height: 100%;
+           object-fit: cover;
+           z-index: -1;
         }}
         </style>
         
         <video autoplay loop muted playsinline>
-            <source src="{video_path}" type="video/mp4">
-            Tu navegador no soporta el elemento de video.
+           <source src="{video_path}" type="video/mp4">
+           Tu navegador no soporta el elemento de video.
         </video>
         """,
         unsafe_allow_html=True
     )
+
 
 image1 = Image.open('Img_3.jpeg')
 
