@@ -253,8 +253,16 @@ def visualizacion_a_nivel_nacional(archivo):
                 fig.update_layout(title={'text': f'Frecuencia de Sismos en Rangos de Profundidad ({min_anio}{tex})','x': 0.2,},xaxis_title='Rango de Profundidad (Km)',yaxis_title='Frecuencia',height=500,width=712)
                 fig.update_traces(marker=dict(line=dict(color='black', width=1)), selector=dict(type='bar'))
                 st.plotly_chart(fig)
-                st.subheader("Después de visualizar el mapa y el gráfico de barras, se detalla lo siguiente: ")  
-                
+                st.subheader("Después de visualizar el mapa y el gráfico de barras, se detalla lo siguiente: ") 
+                st.write(
+                    f'<div style="color: white;">'
+                    f'<h> De este modo se observa que {texto_max} <span style="color: blue;">{texto_max2}</span>, resalta la presencia de eventos sísmicos a un nivel de profundidad'
+                    f' <span style="color: blue;">{nivel_mostrar}</span>, calculados desde el hipocentro hasta la capa superficial de la tierra, en comparación con las demás.'
+                    f' Y esta, contabiliza un total de <span style="color: blue;">{numero_mostrar}</span> puntos de evento. De manera tal, se puede inferir'
+                    f' que {informac}</h>'
+                    '</div>',
+                    unsafe_allow_html=True
+                )             
             else:  
                 mapa = fl.Map(location=[-9.189967, -75.015152], zoom_start=5)
                 folium_static(mapa) 
