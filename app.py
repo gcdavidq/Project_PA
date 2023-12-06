@@ -28,7 +28,7 @@ page_bg_video = """
     </style>
 
     <video autoplay loop muted playsinline>
-        <source src="https://pin.it/3KX5pf7/p1.mp4" type="video/mp4">
+        <source src="https://youtu.be/2TVuhNCoOAs?si=bUQDL2hfiwNSdu3l/p1.mp4" type="video/mp4">
         Tu navegador no soporta el elemento de video.
     </video>
 """
