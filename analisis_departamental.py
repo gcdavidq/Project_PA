@@ -24,6 +24,11 @@ def assign_departments(data, department_boundaries):
     merged = gpd.sjoin(geo_df, department_boundaries, op='within')
     return merged
 
+# La función para contar la cantidad de sismos en cada departamento
+def count_sismos(data):
+    return data.groupby('DEPARTAMENTOS').size().reset_index(name='count')
+
+
 def create_map(data):
     if not data.empty:
         st.subheader('Mapa de Puntos y Gráfico de Barras')
@@ -60,14 +65,22 @@ def create_map(data):
 
         # Gráfico de barras
         st.subheader('Cantidad de Sismos por DEPARTAMENTOS')
-        fig = px.bar(data, x='DEPARTAMENTOS', color='DEPARTAMENTOS', title='Cantidad de Sismos por Departamento',
+        count_data = count_sismos(data)
+
+        fig = px.bar(count_data, x='DEPARTAMENTOS', y='count', color='DEPARTAMENTOS',
+                     title='Cantidad de Sismos por Departamento',
                      labels={'DEPARTAMENTOS': 'Departamento', 'count': 'Cantidad'},
-                     color_discrete_map=department_color_dict)
+                     color_discrete_map=department_color_dict,
+                     height=400) 
+        fig.update_xaxes(tickangle=45, tickmode='array')
 
-        dtick_value = max(1, int(len(data) / 10))
-        fig.update_layout(xaxis_title='Departamento', yaxis_title='Cantidad de Sismos', yaxis=dict(dtick=dtick_value))
+        # Ajustar el rango del eje y de forma dinámica
+        y_max = count_data['count'].max()
+        dtick_value = max(1, int(y_max / 10))  
+        fig.update_yaxes(range=[0, y_max + 1], dtick=dtick_value)
+
         st.plotly_chart(fig)
-
+        
         #grafico lineal
         departaments = data['DEPARTAMENTOS'].unique()
         selected_years = [data['Año'].astype(int).min(), data['Año'].astype(int).max()+1]
