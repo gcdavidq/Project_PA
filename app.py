@@ -23,8 +23,8 @@ image1 = Image.open('image1.png')
 
 # Añadimos un panel de control
 # Crear las pestañas
-tab1, tab2, tab3 = st.beta_columns(3)
-tabs = [tab1, tab2, tab3]
+col1, col2, col3 = st.columns(3)
+tabs = [col1, col2, col3]
 
 # Estilos de letra y color personalizados
 tab_styles = [
@@ -34,8 +34,8 @@ tab_styles = [
 ]
 
 # Aplicar estilos de letra y color a las pestañas
-for i, tab in enumerate(tabs):
-    tab.markdown(f"<h1 style='{tab_styles[i]}'>{['Inicio', 'Análisis a nivel nacional', 'Análisis a nivel departamental'][i]}</h1>", unsafe_allow_html=True)
+for i, col in enumerate(tabs):
+    col.markdown(f"<h1 style='{tab_styles[i]}'>{['Inicio', 'Análisis a nivel nacional', 'Análisis a nivel departamental'][i]}</h1>", unsafe_allow_html=True)
 
 #####
 with tab1:
