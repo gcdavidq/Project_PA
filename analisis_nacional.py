@@ -34,7 +34,7 @@ def visualizacion_a_nivel_nacional(archivo):
 
     # Texto con fondo blanco usando markdown
     st.markdown(
-        '<div style="background-color: #ffffff80; padding: 10px;">'
+        '<div style="background-color: #ffffff80; padding: 10px;border-radius: 10px;">'
         '<h>El Perú, ubicado en el Cinturón de Fuego del Pacífico, experimenta una alta actividad sísmica y volcánica, '
         'el cual, es de suma importancia su correspondiente investigación.  ' 
         'En esta sección, se presenta el análisis de la concurrencia de eventos sísmicos mediante un mapa de calor, '
