@@ -7,40 +7,35 @@ st.set_page_config(
     page_icon="volcano",
     initial_sidebar_state="expanded",
 )
-video_file = st.file_uploader("Cargar video", type=["mp4"])
+st.set_page_config(layout="wide")
 
-if video_file is not None:
-    # Obtén la ruta única del video cargado generada por st.video
-    video_path = st.empty().video(video_file, format="video/mp4")._repr_html_().split('src="')[1].split('"')[0]
+video_html = """
+		<style>
 
-    # Agrega el estilo CSS necesario para el fondo de video
-    st.markdown(
-        f"""
-        <style>
-        body {{
-           margin: 0;
-           overflow: hidden;
-        }}
-        
-        video {{
-           position: fixed;
-           top: 0;
-           left: 0;
-           width: 100%;
-           height: 100%;
-           object-fit: cover;
-           z-index: -1;
-        }}
-        </style>
-        
-        <video autoplay loop muted playsinline>
-           <source src="{video_path}" type="video/mp4">
-           Tu navegador no soporta el elemento de video.
-        </video>
-        """,
-        unsafe_allow_html=True
-    )
+		#myVideo {
+		  position: fixed;
+		  right: 0;
+		  bottom: 0;
+		  min-width: 100%; 
+		  min-height: 100%;
+		}
 
+		.content {
+		  position: fixed;
+		  bottom: 0;
+		  background: rgba(0, 0, 0, 0.5);
+		  color: #f1f1f1;
+		  width: 100%;
+		  padding: 20px;
+		}
+
+		</style>	
+		<video autoplay muted loop id="myVideo">
+		  <source src="p1.mp4")>
+		</video>
+        """
+
+st.markdown(video_html, unsafe_allow_html=True)
 
 image1 = Image.open('Img_3.jpeg')
 
