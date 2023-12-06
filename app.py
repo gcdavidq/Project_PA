@@ -2,8 +2,7 @@ import streamlit as st
 from PIL import Image
 from analisis_nacional import visualizacion_a_nivel_nacional
 from analisis_departamental import load_department_boundaries, load_data, assign_departments, show_departments_count
-from Analisis_magnitud_ import cargar_datos, extraer_columnas_fecha, crear_slider_ano, actualizar_dataframe_rangos_magnitud, crear_grafico_barras, crear_grafico_lineas, seleccionar_tipo_grafico,  mostrar_grafico, crear_mapa, mostrar_mapa, descargar_archivos, main
-
+from analisis_magnitud_1 import mostrar_dashboard
 st.set_page_config(
     page_title="Sismos en el Perú",
     page_icon="volcano",
@@ -40,18 +39,8 @@ with tab1:
 # Análisis a nivel nacional
 with tab2:
     visualizacion_a_nivel_nacional("Catalogo1960_2022.csv")
-    cargar_datos ("Catalogo1960_2022.csv")
-    extraer_columnas_fecha (df)
-    crear_slider_ano ()
-    actualizar_dataframe_rangos_magnitud ()
-    crear_grafico_barras ()
-    crear_grafico_lineas ()
-    seleccionar_tipo_grafico ()
-    mostrar_grafico ()
-    crear_mapa ()
-    mostrar_mapa ()
-    descargar_archivos ()
-    main ()
+    mostrar_dashboard("Catalogo1960_2022.csv")
+
 
 
 
