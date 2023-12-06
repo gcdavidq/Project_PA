@@ -26,7 +26,7 @@ image1 = Image.open('Img_3.jpeg')
 tab1, tab2, tab3 = st.tabs(["_Streamlit_ is :blue[_Inicio_] :sunglasses:", "Análisis a nivel nacional", "Anális a nivel departamental"])
 
 with tab1:
-    st.subheader('ANALISIS SISMICO ')
+    st.subheader('ANALISIS SISMICO REGISTRADOS EN EL PERÚ (1960_2022)')
     st.image(image1)
 
 # Análisis a nivel nacional
