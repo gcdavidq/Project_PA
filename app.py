@@ -10,7 +10,7 @@ st.set_page_config(
 page_bg_img = f"""
     <style>
     [data-testid="stAppViewContainer"] > .main {{
-        background-image: url("https://img.freepik.com/premium-photo/wood-desk-wood-floor-with-sea-beach-sand-blue-background-summer-background_35652-2616.jpg?size=626&ext=jpg&ga=GA1.1.1826414947.1699747200&semt=ais");
+        background-image: url("https://www.freepik.es/vector-gratis/fondo-semitono-circulos_13295064.htm#query=fondos%20para%20paginas%20web&position=3&from_view=keyword&track=ais&uuid=d3921b75-9353-41c4-9188-217cc29e9d5d");
         background-size: cover;
         background-position: center;
         background-attachment: local;
