@@ -2,7 +2,7 @@ import streamlit as st
 from PIL import Image
 from analisis_nacional import visualizacion_a_nivel_nacional
 from analisis_departamental import load_department_boundaries, load_data, assign_departments, show_departments_count
-from Analisis_magnitud import cargar_datos, extraer_columnas_fecha, crear_slider_ano, actualizar_dataframe_rangos_magnitud, crear_grafico_barras, crear_grafico_lineas, seleccionar_tipo_grafico,  mostrar_grafico, crear_mapa, mostrar_mapa, descargar_archivos, main
+from Analisis_magnitud_ import cargar_datos, extraer_columnas_fecha, crear_slider_ano, actualizar_dataframe_rangos_magnitud, crear_grafico_barras, crear_grafico_lineas, seleccionar_tipo_grafico,  mostrar_grafico, crear_mapa, mostrar_mapa, descargar_archivos, main
 
 st.set_page_config(
     page_title="Sismos en el Perú",
