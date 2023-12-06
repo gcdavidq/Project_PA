@@ -10,10 +10,27 @@ st.set_page_config(
 page_bg_video = """
     <style>
     body {
-        background: url("p1.mp4") no-repeat center center fixed;
-        background-size: cover;
+        margin: 0;
+        overflow: hidden;
+    }
+
+    video {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: auto;
+        z-index: -1;
     }
     </style>
+
+    <video autoplay loop muted playsinline>
+        <source src="p1.mp4" type="video/mp4">
+        Tu navegador no soporta el elemento de video.
+    </video>
 """
 
 st.markdown(page_bg_video, unsafe_allow_html=True)
