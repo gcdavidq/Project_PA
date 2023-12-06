@@ -10,7 +10,7 @@ st.set_page_config(
 page_bg_img = f"""
     <style>
     [data-testid="stAppViewContainer"] > .main {{
-        background-image: url("https://www.freepik.es/vector-gratis/fondo-semitono-circulos_13295064.htm#query=fondos%20para%20paginas%20web&position=3&from_view=keyword&track=ais&uuid=d3921b75-9353-41c4-9188-217cc29e9d5d");
+        background-image: url("/Imagen_fondo.jpg");
         background-size: cover;
         background-position: center;
         background-attachment: local;
