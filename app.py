@@ -19,7 +19,7 @@ page_bg_img = f"""
 """
 st.markdown(page_bg_img, unsafe_allow_html=True)
 
-st.video(st.file_uploader("p1", type=["mp4"]))
+image1 = Image.open('image1.png')
 
 # Añadimos un panel de control
 tab1, tab2, tab3 = st.tabs([  "Inicio", "Análisis a nivel nacional", "Anális a nivel departamental"])
