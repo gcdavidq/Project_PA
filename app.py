@@ -26,7 +26,7 @@ image1 = Image.open('Img_3.jpeg')
 tab1, tab2, tab3 = st.tabs(["_Streamlit_ is :blue[_Inicio_] :sunglasses:", "Análisis a nivel nacional", "Anális a nivel departamental"])
 
 with tab1:
-    font_style = 'italic'  # Puedes usar 'italic', 'oblique', 'normal', 'bold', etc.
+    font_style = 'Cooper Black'  # Puedes usar 'italic', 'oblique', 'normal', 'bold', etc.
     color = 'blue'  # Puedes usar nombres de colores o códigos hexadecimales
     
     # Usar Markdown y HTML para aplicar estilos al subencabezado
