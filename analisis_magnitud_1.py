@@ -147,7 +147,7 @@ def mostrar_dashboard(archivo_excel):
     else:
         st.warning("No hay datos disponibles para los filtros seleccionados.")
     
-    st.dataframe(df_conteo_rangos_profundidad_filtrado)
+    st.dataframe(df_conteo_rangos_magnitud_filtrado)
 
     # Agregar botón de descarga para el gráfico de barras
     dataframe_download_button = st.download_button(
