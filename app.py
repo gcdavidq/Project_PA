@@ -16,13 +16,11 @@ page_bg_video = """
 
     video {
         position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        min-width: 100%;
-        min-height: 100%;
-        width: auto;
-        height: auto;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
         z-index: -1;
     }
     </style>
@@ -35,7 +33,7 @@ page_bg_video = """
 
 st.markdown(page_bg_video, unsafe_allow_html=True)
 
-image1 = Image.open('Img_3.jpg')
+image1 = Image.open('Img_3.jpeg')
 
 # Añadimos un panel de control
 tab1, tab2, tab3 = st.tabs([  "Inicio", "Análisis a nivel nacional", "Anális a nivel departamental"])
