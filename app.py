@@ -26,8 +26,11 @@ image1 = Image.open('Img_3.jpeg')
 tab1, tab2, tab3 = st.tabs(["_Streamlit_ is :blue[_Inicio_] :sunglasses:", "Análisis a nivel nacional", "Anális a nivel departamental"])
 
 with tab1:
-    color = 'blue'
-    st.markdown(f'<h3 style="color:{color};">ANÁLISIS SÍSMICO REGISTRADOS EN EL PERÚ (1960_2022)</h3>', unsafe_allow_html=True)
+    font_style = 'italic'  # Puedes usar 'italic', 'oblique', 'normal', 'bold', etc.
+    color = 'blue'  # Puedes usar nombres de colores o códigos hexadecimales
+    
+    # Usar Markdown y HTML para aplicar estilos al subencabezado
+    st.markdown(f'<h3 style="color:{color}; font-style:{font_style};">ANÁLISIS SÍSMICO REGISTRADOS EN EL PERÚ (1960_2022)</h3>', unsafe_allow_html=True)
     st.image(image1)
 
 # Análisis a nivel nacional
