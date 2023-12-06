@@ -1,5 +1,4 @@
 import streamlit as st
-import cv2
 from PIL import Image
 from analisis_nacional import visualizacion_a_nivel_nacional
 from analisis_departamental import load_department_boundaries, load_data, assign_departments, show_departments_count
@@ -9,29 +8,17 @@ st.set_page_config(
     initial_sidebar_state="expanded",
 )
 
-# Cargar el video
-cap = cv2.VideoCapture('p1.mp4')
-
-# Configurar el codec de salida a H.264
-fourcc = cv2.VideoWriter_fourcc(*'mp4v') 
-out = cv2.VideoWriter('output.mp4', fourcc, 20.0, (640,480))
-
-while(cap.isOpened()):
-   ret, frame = cap.read()
-   if ret==True:
-       out.write(frame)
-   else:
-       break
-
-# Liberar el video y el escritor
-cap.release()
-out.release()
-
-# Cargar el video convertido en Streamlit
-video_file = open('output.mp4', 'rb')
-video_bytes = video_file.read()
-st.video(video_bytes)
-
+page_bg_img = """
+    <style>
+    [data-testid="stAppViewContainer"] > .main {
+        background-image: url("https://raw.githubusercontent.com/gcdavidq/Project_PA/main/8.png");
+        background-size: cover;
+        background-position: center;
+        background-attachment: local;
+    }
+    </style>
+"""
+st.markdown(page_bg_img, unsafe_allow_html=True)
 
 image1 = Image.open('Img_3.jpeg')
 
